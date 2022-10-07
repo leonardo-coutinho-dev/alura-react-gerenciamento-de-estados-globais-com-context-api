@@ -17,10 +17,10 @@ const Login = () => {
           borderRadius: "4px",
         }}
       >
-        <Typography variant="body1" gutterBottom>
+        <Typography variant="h6" gutterBottom>
           Login
         </Typography>
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="body1" gutterBottom>
           Primeiro, nos informe o seu nome e sobrenome, por gentileza:
         </Typography>
         <TextField
@@ -29,7 +29,7 @@ const Login = () => {
           variant="outlined"
           sx={{ paddingBottom: "7px" }}
         />
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="body1" gutterBottom>
           Agora, nos informe o valor em dinheiro que você possui disponível para
           gastar:
         </Typography>

@@ -1,8 +1,8 @@
-import { Box, Button, Typography } from "@mui/material";
-import { TextField } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
+import { Box, Button, Typography, TextField } from "@mui/material";
 
 const Login = () => {
+  const [nome, setNome] = useState("");
   return (
     <>
       <Box
@@ -27,6 +27,10 @@ const Login = () => {
           id="text-field-nome-sobrenome"
           label="Nome/Sobrenome"
           variant="outlined"
+          value={nome}
+          onChange={(event) => {
+            setNome(event.target.value);
+          }}
           sx={{ paddingBottom: "7px" }}
         />
         <Typography variant="body1" gutterBottom>
@@ -54,7 +58,12 @@ const Login = () => {
           borderRadius: "4px",
         }}
       >
-        <Button sx={{ maxWidth: "200px", backgroundColor: "#1d1d1d" }}>
+        <Button
+          sx={{ maxWidth: "200px", backgroundColor: "#1d1d1d" }}
+          onClick={() => {
+            console.log(nome);
+          }}
+        >
           Próxima {">"}
         </Button>
       </Box>

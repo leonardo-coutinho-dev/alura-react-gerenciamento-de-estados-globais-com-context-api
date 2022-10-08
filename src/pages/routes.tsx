@@ -1,24 +1,30 @@
-import React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import React, { useState } from "react";
+
 import { Cart, Login, Shop } from ".";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Login />,
-  },
-  {
-    path: "/cart",
-    element: <Cart />,
-  },
-  {
-    path: "/shop",
-    element: <Shop />,
-  },
-]);
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import { UsuarioContext } from "../common/context";
 
 const AppRoutes = () => {
-  return <RouterProvider router={router} />;
+  const [nome, setNome] = useState("");
+  const [valor, setValor] = useState(0);
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <UsuarioContext.Provider value={{ nome, setNome, valor, setValor }}>
+              <Login />
+            </UsuarioContext.Provider>
+          }
+        />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/shop" element={<Shop />} />
+      </Routes>
+    </BrowserRouter>
+  );
 };
 
 export default AppRoutes;

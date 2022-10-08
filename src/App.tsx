@@ -1,12 +1,10 @@
 import React from "react";
-import { Cart, Login, Shop } from "./components";
+import AppRoutes from "./components/routes";
 
 export const App = () => {
   return (
     <div className="App">
-      <Login />
-      <Shop />
-      <Cart />
+      <AppRoutes />
     </div>
   );
 };

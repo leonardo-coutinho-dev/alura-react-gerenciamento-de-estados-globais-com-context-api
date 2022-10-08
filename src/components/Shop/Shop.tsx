@@ -1,5 +1,6 @@
-import { Box, Button } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
+import { Box, Button } from "@mui/material";
 
 const Shop = () => {
   return (
@@ -32,12 +33,16 @@ const Shop = () => {
           borderRadius: "4px",
         }}
       >
-        <Button sx={{ maxWidth: "200px", backgroundColor: "#1d1d1d" }}>
-          {"<"} Anterior
-        </Button>
-        <Button sx={{ maxWidth: "200px", backgroundColor: "#1d1d1d" }}>
-          Próxima {">"}
-        </Button>
+        <Link to={"/"}>
+          <Button sx={{ maxWidth: "200px", backgroundColor: "#1d1d1d" }}>
+            {"<"} Anterior
+          </Button>
+        </Link>
+        <Link to={"/cart"}>
+          <Button sx={{ maxWidth: "200px", backgroundColor: "#1d1d1d" }}>
+            Próxima {">"}
+          </Button>
+        </Link>
       </Box>
     </>
   );

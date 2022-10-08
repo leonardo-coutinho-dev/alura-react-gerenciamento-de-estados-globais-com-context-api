@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Box, Button, Typography, TextField } from "@mui/material";
 
 const Login = () => {
   const [nome, setNome] = useState("");
+  const [valor, setValor] = useState(0);
   return (
     <>
       <Box
@@ -42,6 +44,10 @@ const Login = () => {
           label="Valor em R$"
           variant="outlined"
           type="number"
+          value={valor}
+          onChange={(event) => {
+            setValor(Number(event.target.value));
+          }}
         />
       </Box>
       <Box
@@ -58,14 +64,17 @@ const Login = () => {
           borderRadius: "4px",
         }}
       >
-        <Button
-          sx={{ maxWidth: "200px", backgroundColor: "#1d1d1d" }}
-          onClick={() => {
-            console.log(nome);
-          }}
-        >
-          Próxima {">"}
-        </Button>
+        <Link to={"/shop"}>
+          <Button
+            sx={{ maxWidth: "200px", backgroundColor: "#1d1d1d" }}
+            onClick={() => {
+              console.log(nome);
+              console.log(valor);
+            }}
+          >
+            Próxima {">"}
+          </Button>
+        </Link>
       </Box>
     </>
   );

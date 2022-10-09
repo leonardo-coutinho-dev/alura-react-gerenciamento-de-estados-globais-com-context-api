@@ -8,7 +8,9 @@ import { UsuarioContext } from "../common/context";
 
 const AppRoutes = () => {
   const [nome, setNome] = useState("");
+
   const [valor, setValor] = useState(0);
+
   return (
     <BrowserRouter>
       <Routes>

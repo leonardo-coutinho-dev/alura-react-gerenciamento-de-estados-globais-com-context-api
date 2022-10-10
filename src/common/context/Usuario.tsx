@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React, { createContext, useState } from "react";
 
 interface UsuarioContextTypes {
   nome: string;
@@ -7,11 +7,25 @@ interface UsuarioContextTypes {
   setValor: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const UsuarioContext = createContext<UsuarioContextTypes>({
+interface UsuarioProviderProps {
+  children: React.ReactNode;
+}
+
+export const UsuarioContext = createContext<UsuarioContextTypes>({
   nome: "",
   setNome: () => {},
   valor: 0,
   setValor: () => {},
 });
 
-export default UsuarioContext;
+export const UsuarioProvider = ({ children }: UsuarioProviderProps) => {
+  const [nome, setNome] = useState("");
+
+  const [valor, setValor] = useState(0);
+
+  return (
+    <UsuarioContext.Provider value={{ nome, setNome, valor, setValor }}>
+      {children}
+    </UsuarioContext.Provider>
+  );
+};

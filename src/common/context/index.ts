@@ -1,1 +1,1 @@
-export { default as UsuarioContext } from "./Usuario";
+export { UsuarioContext } from "./Usuario";

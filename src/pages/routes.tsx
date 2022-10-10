@@ -1,25 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { Cart, Login, Shop } from ".";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { UsuarioContext } from "../common/context";
+import { UsuarioProvider } from "../common/context/Usuario";
 
 const AppRoutes = () => {
-  const [nome, setNome] = useState("");
-
-  const [valor, setValor] = useState(0);
-
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path="/"
           element={
-            <UsuarioContext.Provider value={{ nome, setNome, valor, setValor }}>
+            <UsuarioProvider>
               <Login />
-            </UsuarioContext.Provider>
+            </UsuarioProvider>
           }
         />
         <Route path="/cart" element={<Cart />} />

@@ -4,7 +4,7 @@ import { Cart, Login, Shop } from ".";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { UsuarioProvider } from "../common/context/Usuario";
+import { UsuarioProvider } from "../common/context";
 
 const AppRoutes = () => {
   return (

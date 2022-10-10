@@ -1,1 +1,1 @@
-export { UsuarioContext } from "./Usuario";
+export { UsuarioContext, UsuarioProvider } from "./Usuario";

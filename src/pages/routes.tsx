@@ -9,13 +9,13 @@ import { UsuarioProvider } from "../common/context";
 const AppRoutes = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <UsuarioProvider>
+      <UsuarioProvider>
+        <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/cart" element={<Cart />} />
-        </UsuarioProvider>
-        <Route path="/shop" element={<Shop />} />
-      </Routes>
+          <Route path="/shop" element={<Shop />} />
+        </Routes>
+      </UsuarioProvider>
     </BrowserRouter>
   );
 };

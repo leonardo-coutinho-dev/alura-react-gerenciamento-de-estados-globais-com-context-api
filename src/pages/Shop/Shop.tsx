@@ -8,6 +8,7 @@ import { UsuarioContext } from "../../common/context";
 
 const Shop = () => {
   const { nome, valor } = useContext(UsuarioContext);
+
   return (
     <>
       <Box
@@ -26,7 +27,12 @@ const Shop = () => {
           Olá, {nome}! Essa é a nossa loja.
         </Typography>
         <Typography variant="body1" gutterBottom>
-          O seu saldo é: R$ {valor.toFixed(2)}
+          O seu saldo é:{" "}
+          {new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          }).format(valor)}
+          ;
         </Typography>
       </Box>
       <Box

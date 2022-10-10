@@ -1,6 +1,9 @@
 import React, { useContext } from "react";
+
 import { Link } from "react-router-dom";
+
 import { Box, Button, Typography } from "@mui/material";
+
 import { UsuarioContext } from "../../common/context";
 
 const Shop = () => {
@@ -20,10 +23,10 @@ const Shop = () => {
         }}
       >
         <Typography variant="body1" gutterBottom>
-          Nome: {nome}
+          Olá, {nome}! Essa é a nossa loja.
         </Typography>
         <Typography variant="body1" gutterBottom>
-          Valor: {valor}
+          O seu saldo é: R$ {valor.toFixed(2)}
         </Typography>
       </Box>
       <Box

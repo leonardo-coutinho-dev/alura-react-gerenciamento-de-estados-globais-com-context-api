@@ -10,30 +10,11 @@ const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <UsuarioProvider>
-              <Login />
-            </UsuarioProvider>
-          }
-        />
-        <Route
-          path="/cart"
-          element={
-            <UsuarioProvider>
-              <Cart />
-            </UsuarioProvider>
-          }
-        />
-        <Route
-          path="/shop"
-          element={
-            <UsuarioProvider>
-              <Shop />
-            </UsuarioProvider>
-          }
-        />
+        <UsuarioProvider>
+          <Route path="/" element={<Login />} />
+          <Route path="/cart" element={<Cart />} />
+        </UsuarioProvider>
+        <Route path="/shop" element={<Shop />} />
       </Routes>
     </BrowserRouter>
   );

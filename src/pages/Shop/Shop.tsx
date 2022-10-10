@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { Box, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
+import { UsuarioContext } from "../../common/context";
 
 const Shop = () => {
+  const { nome, valor } = useContext(UsuarioContext);
   return (
     <>
       <Box
@@ -17,7 +19,12 @@ const Shop = () => {
           borderRadius: "4px",
         }}
       >
-        Shop
+        <Typography variant="body1" gutterBottom>
+          Nome: {nome}
+        </Typography>
+        <Typography variant="body1" gutterBottom>
+          Valor: {valor}
+        </Typography>
       </Box>
       <Box
         sx={{

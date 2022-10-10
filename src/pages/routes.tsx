@@ -18,8 +18,22 @@ const AppRoutes = () => {
             </UsuarioProvider>
           }
         />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/shop" element={<Shop />} />
+        <Route
+          path="/cart"
+          element={
+            <UsuarioProvider>
+              <Cart />
+            </UsuarioProvider>
+          }
+        />
+        <Route
+          path="/shop"
+          element={
+            <UsuarioProvider>
+              <Shop />
+            </UsuarioProvider>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

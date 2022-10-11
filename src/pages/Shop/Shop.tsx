@@ -54,11 +54,19 @@ const Shop = () => {
         </Typography>
         <Card
           variant="outlined"
-          sx={{ backgroundColor: "transparent", border: "none" }}
+          sx={{
+            backgroundColor: "transparent",
+            border: "none",
+          }}
         >
           {productsData.map((product) => (
             <Box
-              sx={{ backgroundColor: "#F7F5D2", marginBottom: "16px" }}
+              sx={{
+                backgroundColor: "#F7F5D2",
+                margin: "16px 16px 16px",
+                boxShadow: "1px 1px 2px 1px #1d1d1d",
+                borderRadius: "2px",
+              }}
               key={product.key}
             >
               <CardContent

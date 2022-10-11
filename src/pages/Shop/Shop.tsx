@@ -16,9 +16,9 @@ import { UsuarioContext } from "../../common/context";
 // dummy data
 
 const productsData = [
-  { name: "Tomato", price: 5.8, key: 0 },
-  { name: "Cucumber", price: 7.2, key: 1 },
-  { name: "Letuce", price: 3.4, key: 2 },
+  { name: "Tomato", price: 5.8, quantity: 0, key: 0 },
+  { name: "Cucumber", price: 7.2, quantity: 0, key: 1 },
+  { name: "Letuce", price: 3.4, quantity: 0, key: 2 },
 ];
 
 const Shop = () => {
@@ -80,25 +80,44 @@ const Shop = () => {
                   </strong>
                 </Typography>
               </CardContent>
-              <CardActions sx={{ backgroundColor: "transparent" }}>
-                <Button
-                  sx={{ margin: 0, backgroundColor: "#1d1d1d" }}
-                  size="small"
-                  onClick={() => {
-                    console.log("Adicionou um produto!");
-                  }}
-                >
-                  +
-                </Button>
-                <Button
-                  sx={{ margin: 0, backgroundColor: "#1d1d1d" }}
-                  size="small"
-                  onClick={() => {
-                    console.log("Removeu um produto!");
-                  }}
-                >
-                  -
-                </Button>
+              <CardActions
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
+                <div>
+                  <Button
+                    sx={{
+                      margin: "0 8px 0 0",
+                      color: "#1d1d1d",
+                      backgroundColor: "#bbcbcb",
+                    }}
+                    size="small"
+                    onClick={() => {
+                      console.log("Adicionou um produto!");
+                    }}
+                  >
+                    +
+                  </Button>
+                  <Button
+                    sx={{
+                      margin: 0,
+                      color: "#1d1d1d",
+                      backgroundColor: "#bbcbcb",
+                    }}
+                    size="small"
+                    onClick={() => {
+                      console.log("Removeu um produto!");
+                    }}
+                  >
+                    -
+                  </Button>
+                </div>
+                <div>
+                  <Typography>Quantity: {product.quantity}</Typography>
+                </div>
               </CardActions>
             </Box>
           ))}

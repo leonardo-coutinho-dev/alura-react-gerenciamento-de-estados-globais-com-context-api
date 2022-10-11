@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
 import { Link } from "react-router-dom";
 
@@ -21,47 +21,10 @@ const productsData = [
   { name: "Letuce", price: 3.4, key: 2 },
 ];
 
-const card = (
-  <>
-    {productsData.map((product) => (
-      <Box
-        sx={{ backgroundColor: "#F7F5D2", marginBottom: "16px" }}
-        key={product.key}
-      >
-        <CardContent
-          sx={{
-            margin: 0,
-            padding: "16px 16px 0",
-          }}
-        >
-          <Typography sx={{ fontSize: 14 }} color="#1d1d1d" gutterBottom>
-            <strong>{product.name}</strong>
-          </Typography>
-          <Typography sx={{ margin: 0 }} color="#1d1d1d">
-            <strong>
-              {new Intl.NumberFormat("pt-BR", {
-                style: "currency",
-                currency: "BRL",
-              }).format(product.price)}
-              /kg
-            </strong>
-          </Typography>
-        </CardContent>
-        <CardActions sx={{ backgroundColor: "transparent" }}>
-          <Button sx={{ margin: 0, backgroundColor: "#1d1d1d" }} size="small">
-            +
-          </Button>
-          <Button sx={{ margin: 0, backgroundColor: "#1d1d1d" }} size="small">
-            -
-          </Button>
-        </CardActions>
-      </Box>
-    ))}
-  </>
-);
-
 const Shop = () => {
   const { nome, valor } = useContext(UsuarioContext);
+
+  // const { total, setTotal } = useState(0);
 
   return (
     <>
@@ -93,7 +56,52 @@ const Shop = () => {
           variant="outlined"
           sx={{ backgroundColor: "transparent", border: "none" }}
         >
-          {card}
+          {productsData.map((product) => (
+            <Box
+              sx={{ backgroundColor: "#F7F5D2", marginBottom: "16px" }}
+              key={product.key}
+            >
+              <CardContent
+                sx={{
+                  margin: 0,
+                  padding: "16px 16px 0",
+                }}
+              >
+                <Typography sx={{ fontSize: 14 }} color="#1d1d1d" gutterBottom>
+                  <strong>{product.name}</strong>
+                </Typography>
+                <Typography sx={{ margin: 0 }} color="#1d1d1d">
+                  <strong>
+                    {new Intl.NumberFormat("pt-BR", {
+                      style: "currency",
+                      currency: "BRL",
+                    }).format(product.price)}
+                    /kg
+                  </strong>
+                </Typography>
+              </CardContent>
+              <CardActions sx={{ backgroundColor: "transparent" }}>
+                <Button
+                  sx={{ margin: 0, backgroundColor: "#1d1d1d" }}
+                  size="small"
+                  onClick={() => {
+                    console.log("Adicionou um produto!");
+                  }}
+                >
+                  +
+                </Button>
+                <Button
+                  sx={{ margin: 0, backgroundColor: "#1d1d1d" }}
+                  size="small"
+                  onClick={() => {
+                    console.log("Removeu um produto!");
+                  }}
+                >
+                  -
+                </Button>
+              </CardActions>
+            </Box>
+          ))}
         </Card>
       </Box>
       <Box

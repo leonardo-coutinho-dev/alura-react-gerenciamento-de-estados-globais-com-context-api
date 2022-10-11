@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
 
-// Interfaces for Login
+// Interfaces
 
 interface UsuarioContextTypes {
   nome: string;
@@ -13,7 +13,7 @@ interface UsuarioProviderProps {
   children: React.ReactNode;
 }
 
-// creating the context for login
+// creating the context
 
 export const UsuarioContext = createContext<UsuarioContextTypes>({
   nome: "",
@@ -26,10 +26,10 @@ export const UsuarioContext = createContext<UsuarioContextTypes>({
 
 UsuarioContext.displayName = "Usuário";
 
-// creating the provider component for login
+// creating the provider component
 
 export const UsuarioProvider = ({ children }: UsuarioProviderProps) => {
-  const [nome, setNome] = useState("");
+  const [nome, setNome] = useState("{nome aqui}");
 
   const [valor, setValor] = useState(0);
 

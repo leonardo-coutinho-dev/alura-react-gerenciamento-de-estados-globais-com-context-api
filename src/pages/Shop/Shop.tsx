@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 
 import { Link } from "react-router-dom";
 
@@ -23,8 +23,6 @@ const productsData = [
 
 const Shop = () => {
   const { nome, valor } = useContext(UsuarioContext);
-
-  // const { total, setTotal } = useState(0);
 
   return (
     <>
